@@ -4,7 +4,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.speezy.fastcommers.dto.UserDto;
-import com.speezy.fastcommers.entity.User;
+import com.speezy.fastcommers.entity.user.User;
 import com.speezy.fastcommers.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +24,14 @@ public class UserServices {
         user.setName(userDto.getName()); // This is correct now
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setPhoneNumber(userDto.getPhoneNumber());
+        user.setRole(userDto.getRole());
+        user.setLatitude(userDto.getLatitude());
+        user.setLongitude(userDto.getLongitude());
+        user.setAddress(userDto.getAddress());
+        user.setCity(userDto.getCity());
+        user.setCreatedAt(user.getCreatedAt()); // This is correct now (null); // Keep this if DTO is snake_case
+
         userRepository.save(user);
     }
 
