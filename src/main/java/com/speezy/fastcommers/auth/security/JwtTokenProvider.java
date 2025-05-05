@@ -1,5 +1,5 @@
 package com.speezy.fastcommers.auth.security;
 
-public class JwtAuthenticationFilter {
-    
+public class JwtTokenProvider {
+
 }
