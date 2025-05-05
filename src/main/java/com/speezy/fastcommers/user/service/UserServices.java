@@ -1,5 +1,7 @@
 package com.speezy.fastcommers.user.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +34,7 @@ public class UserServices {
                  return userRepository.save(user);
 
     }
-
+    public Optional<User> findByPhoneNumber(String phoneNumber) {
+        return userRepository.findByPhoneNumber(phoneNumber);
+    }
 }
